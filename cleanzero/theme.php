@@ -47,6 +47,16 @@ $('.savedsearchterm').hover(
 
 </script>
 EOT;
+// get resize configuration
+
+$resize=false;
+$site_resize = get_config('cleanzero', 'resize' );
+if(local_user()) $resize = get_pconfig(local_user(), 'cleanzero', 'resize' );
+
+if ($resize===false) $resize=$site_resize;
+if ($resize===false) $resize=0;
+
+if (intval($resize) > 0) {
 //load jquery.ae.image.resize.js
 $imageresizeJS = $a->get_baseurl($ssl_state)."/view/theme/cleanzero/js/jquery.ae.image.resize.js";
 $a->page['htmlhead'] .= sprintf('<script language="JavaScript" src="%s" ></script>', $imageresizeJS);
@@ -54,7 +64,7 @@ $a->page['htmlhead'] .= '
 <script>
 
  $(function() {
-	$(".wall-item-content-wrapper  img").aeImageResize({height: 250, width: 250});
+	$(".wall-item-content-wrapper  img").aeImageResize({height: '.$resize.', width: '.$resize.'});
   });
-</script>';
+</script>';}
 }
