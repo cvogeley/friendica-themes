@@ -59,7 +59,7 @@ function cleanzero_form(&$a, $color,$font_size,$resize){
 		'10'=>'10',
 		);
 	$resizes = array(
-		"0"=>"0",
+		"0"=>"0 (no resizing)",
 		"600"=>"1 (600px)",
 		"300"=>"2 (300px)",
 		"250"=>"3 (250px)",
@@ -71,7 +71,7 @@ function cleanzero_form(&$a, $color,$font_size,$resize){
 		'$submit' => t('Submit'),
 		'$baseurl' => $a->get_baseurl(),
 		'$title' => t("Theme settings"),
-		'$resize' => array('cleanzero_resize',t ('Set resize level (0 no resize 4 strongest resize)'),$resize,'',$resizes),
+		'$resize' => array('cleanzero_resize',t ('Set resize level for images in posts and comments (width and height)'),$resize,'',$resizes),
 		'$font_size' => array('cleanzero_font_size', t('Set font-size for posts and comments'), $font_size, '', $font_sizes),
 		'$color' => array('cleanzero_color', t('Color scheme'), $color, '', $colors),
 	));
