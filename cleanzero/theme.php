@@ -1,4 +1,10 @@
 <?php
+/*
+ * Name: cleanzero
+ * Description: Theme with clean design derived from the zero theme family. Including options to set color schemes, font sizes and resizing of images in posts 
+ * Version:
+ * Author: Christian Vogeley (https://christian-vogeley.de/profile/christian)
+ */
 $a->theme_info = array(
   'extends' => 'duepuntozero',
 );
